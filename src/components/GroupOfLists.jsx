@@ -9,10 +9,10 @@ function GroupOfLists() {
 
   return (
     <div className="container d-flex flex-column p-0">
-      <h1>Listas</h1>
+      <h1>Lists</h1>
       <form action="" className="d-flex ">
         <input
-          className="form-control col-12 "
+          className="form-control "
           type="text"
           onChange={(event) => {
             setItems(event.target.value);

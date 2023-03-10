@@ -3,19 +3,20 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { eraseItem } from "../slices/listItems";
 import { Link } from "react-router-dom";
+import MovieModal from "./Modal";
 
 export default function Listado() {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items);
 
   return (
-    <>
-      <ul className="listItem">
+    <div className="container p-0">
+      <ul className="listItem p-0">
         {items.map((item, index) => {
           return (
             <div
               key={item.index}
-              className="listItem d-flex justify-content-evenly border bg-white mt-3 container p-5 col-12 border-primary border-0 border-top-1"
+              className="list d-flex justify-content-evenly  bg-white mt-3   col-12 w-100 p-0 py-5"
             >
               <input type="checkbox"></input>
               <Link to={`/${item.id}`}>
@@ -32,6 +33,7 @@ export default function Listado() {
           );
         })}
       </ul>
-    </>
+      <MovieModal />
+    </div>
   );
 }

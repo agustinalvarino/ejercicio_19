@@ -24,6 +24,11 @@
   color: white;
 }
 
+.list {
+  border-top: 4px solid blue;
+  border-radius: 5px;
+}
+
 .App-link {
   color: #61dafb;
 }
