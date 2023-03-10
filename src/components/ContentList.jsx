@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import React from "react";
 import { addContent, eraseContent } from "../slices/listContent";
@@ -8,9 +8,12 @@ function ContentList() {
   const params = useParams();
   console.log(params);
   const [content, setContent] = React.useState();
+  const items = useSelector((state) => state.items).filter(
+    (element) => element.id === params.itemId
+  );
   return (
     <div className="container">
-      <h1>Listas</h1>
+      <h1>{items[0].title}</h1>
       <form action="" className="d-flex text-center col-12">
         <input
           className="form-control w-100"

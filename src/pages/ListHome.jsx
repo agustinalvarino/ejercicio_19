@@ -1,9 +1,9 @@
 import ContentList from "../components/ContentList";
 import Content from "../components/Content";
-function ListHome() {
+function ListHome({ items }) {
   return (
     <>
-      <ContentList />
+      <ContentList items={items} />
       <Content />
     </>
   );

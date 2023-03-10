@@ -9,6 +9,12 @@ export default function Listado() {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items);
 
+  const [ticked, setTicked] = React.useState(false);
+  const style = { textDecoration: ticked === true ? "line-through" : null };
+  function handleClick() {
+    setTicked(!ticked);
+  }
+
   return (
     <div className="container p-0">
       <ul className="listItem p-0">
@@ -18,9 +24,11 @@ export default function Listado() {
               key={item.index}
               className="list d-flex justify-content-evenly  bg-white mt-3   col-12 w-100 p-0 py-5"
             >
-              <input type="checkbox"></input>
+              <input type="checkbox" onClick={handleClick}></input>
               <Link to={`/${item.id}`}>
-                <li className="px-3 pt-2 m-0 list-group-item">{item.title}</li>
+                <li className="px-3 pt-2 m-0 list-group-item" style={style}>
+                  {item.title}
+                </li>
               </Link>
               <button
                 className="btn"
