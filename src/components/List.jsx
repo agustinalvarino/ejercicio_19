@@ -10,7 +10,10 @@ export default function Listado() {
   const items = useSelector((state) => state.items);
 
   const [ticked, setTicked] = React.useState(false);
-  const style = { textDecoration: ticked === true ? "line-through" : null };
+  const style = {
+    textDecoration: ticked === true ? "line-through" : null,
+    opacity: ticked === true ? "50%" : null,
+  };
   function handleClick() {
     setTicked(!ticked);
   }
